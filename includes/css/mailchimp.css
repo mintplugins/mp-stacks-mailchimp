@@ -1,0 +1,10 @@
+.mp-stacks-mailchimp-error{
+	padding:10px;
+	border:5px solid;
+	border-color:#F00;
+	max-width: 400px;
+	margin: 0px auto 20px;;	
+}
+.mp-stacks-mailchimp-sign-up-container{
+	display:inline-block;	
+}
