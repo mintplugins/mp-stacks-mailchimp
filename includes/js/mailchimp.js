@@ -1,5 +1,9 @@
 jQuery(document).ready(function($){
 	
+	$(document).on( 'click', '.mp_stacks_mailchimp_submit', function(event){
+		$(this).parent().parent().submit();
+	});
+	
 	//When somone submits the mailchimp form
 	$( '.mp_stacks_mailchimp_signup').on('submit', function( event) {
 		

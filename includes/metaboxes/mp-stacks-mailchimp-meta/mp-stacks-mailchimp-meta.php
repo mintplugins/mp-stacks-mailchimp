@@ -93,6 +93,13 @@ function mp_stacks_mailchimp_create_meta_box(){
 				'field_description' 	=> '<br />What color should the submit button\'s text be when the mouse is over it?' ,
 				'field_type' 	=> 'colorpicker',
 		),
+		array(
+				'field_id'			=> 'mailchimp_email_input_field_size',
+				'field_title' 	=> __( 'Email input field width', 'mp_stacks_mailchimp'),
+				'field_description' 	=> '<br />How many characters wide should the email input field be? Default 35' ,
+				'field_type' 	=> 'number',
+		),
+
 		
 	);
 	

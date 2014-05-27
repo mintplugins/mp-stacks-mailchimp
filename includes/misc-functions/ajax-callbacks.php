@@ -37,6 +37,11 @@ function mp_stacks_mailchimp_add_user(){
 	$mailchimp_list_id = get_post_meta($post_id, 'mailchimp_list_id', true);
 	$mailchimp_success_message = get_post_meta($post_id, 'mailchimp_success_message', true);
 	$mailchimp_success_message = empty( $mailchimp_success_message ) ? __( 'Thanks for joining! Check your email to confirm.', 'mp_stacks_mailchimp' ) : $mailchimp_success_message;
+	$submit_button_text = get_post_meta( $post_id, 'mailchimp_submit_button_text', true );
+	
+	//Get the size of the email input field
+	$mailchimp_email_input_field_size = get_post_meta( $post_id, 'mailchimp_email_input_field_size', true);
+	$mailchimp_email_input_field_size = empty( $mailchimp_email_input_field_size ) ? '35' : $mailchimp_email_input_field_size;
 			
 	//Mail chimp
 	$mailchimp_sever_number = substr($mailchimp_api_key, -3); 
@@ -62,10 +67,10 @@ function mp_stacks_mailchimp_add_user(){
 	
 		<fieldset>
 			<div class="mp-stacks-mailchimp-sign-up-container">
-				<input value="" class="mp-stacks-mailchimp-email" name="mp_stacks_mailchimp_email" type="text" placeholder="' . __('Email Address', 'mp_stacks_mailchimp' ) . '"/>
+				<input value="" class="mp-stacks-mailchimp-email" name="mp_stacks_mailchimp_email" type="text" size="' . $mailchimp_email_input_field_size . '" placeholder="' . __('Email Address', 'mp_stacks_mailchimp' ) . '"/>
 				<input value="' . $post_id . '" class="mp-stacks-mailchimp-brick-id" name="mp_stacks_mailchimp_brick_id" type="hidden" />
 			</div>
-			<input type="submit" class="button" value="submit" />
+			<div class="mp_stacks_mailchimp_submit button">' . $submit_button_text . '</div>
 		</fieldset>';
 		
 	}

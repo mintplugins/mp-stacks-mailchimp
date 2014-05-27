@@ -31,7 +31,7 @@ function mp_stacks_mailchimp_enqueue_scripts(){
 	wp_enqueue_style( 'mp_stacks_mailchimp_css', plugins_url( 'css/mailchimp.css', dirname( __FILE__ ) ) );
 	
 	//Enqueue mailchimp ajax js
-	wp_enqueue_script( 'mp_stacks_mailchimp_js', plugins_url( 'js/mailchimp.js', dirname( __FILE__ ) ), array( 'jquery' ) );
+	wp_enqueue_script( 'mp_stacks_mailchimp_js', plugins_url( 'js/mailchimp.js', dirname( __FILE__ ) ), array( 'jquery', 'mp_stacks_front_end_js' ) );
 
 }
  
