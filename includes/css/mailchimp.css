@@ -1,3 +1,6 @@
+.mp_stacks_mailchimp_signup{
+	display:inline-block;	
+}
 .mp-stacks-mailchimp-error{
 	padding:10px;
 	border:5px solid;
@@ -6,5 +9,20 @@
 	margin: 0px auto 20px;;	
 }
 .mp-stacks-mailchimp-sign-up-container{
-	display:inline-block;	
+	display:table-cell;	
+}
+.mp_brick .mp_stacks_mailchimp_submit,
+.mp_brick .mp_stacks_mailchimp_submit:hover{
+	display:table-cell;	
+	border-radius: 0px 3px 3px 0px;	
+	vertical-align: middle;
+	height:36px;
+	font-size:16px;
+}
+.mp_brick .mp-stacks-mailchimp-email{
+	border-radius: 3px 0px 0px 3px;
+	border: none;
+	margin: 0px;
+	vertical-align: middle;
+	height:36px;
 }

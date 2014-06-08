@@ -59,6 +59,13 @@ function mp_stacks_mailchimp_add_user(){
 		)
 	);
 	
+	if ( is_wp_error( $response ) ){
+		
+		echo __('OOPS! API and List Keys for this mailinglist have not yet been configured. Please notify the website owner.', 'mp_stacks_mailchimp');
+		die();
+			
+	}
+	
 	$response = json_decode($response['body']);
 	
 	if ( isset( $response->error ) ){

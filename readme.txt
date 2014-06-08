@@ -4,7 +4,7 @@ Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
 Tested up to: 3.9
-Stable tag: 1.0.0.1
+Stable tag: 1.0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 
 == Changelog ==
+
+= 1.0.0.2 = June 8, 2014
+* CSS Prettify and bug fixes if no api
 
 = 1.0.0.1 = May 27, 2014
 * Changed input type submit to div and activate using JS - this is so that styles work because firefox doesn’t render submit buttons the same
