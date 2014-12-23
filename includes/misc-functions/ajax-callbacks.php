@@ -73,10 +73,10 @@ function mp_stacks_mailchimp_add_user(){
 	
 		<fieldset>
 			<div class="mp-stacks-mailchimp-sign-up-container">
-				<input value="" class="mp-stacks-mailchimp-email" name="mp_stacks_mailchimp_email" type="text" size="' . $mailchimp_email_input_field_size . '" placeholder="' . __('Email Address', 'mp_stacks_mailchimp' ) . '"/>
+				<input value="" class="mp-stacks-mailchimp-email" name="mp_stacks_mailchimp_email" size="100" type="text" placeholder="' . __('Email Address', 'mp_stacks_mailchimp' ) . '"/>
 				<input value="' . $post_id . '" class="mp-stacks-mailchimp-brick-id" name="mp_stacks_mailchimp_brick_id" type="hidden" />
+				<div class="mp_stacks_mailchimp_submit"><div class="mp_stacks_mailchimp_submit_text">' . $submit_button_text . '</div></div>
 			</div>
-			<div class="mp_stacks_mailchimp_submit button">' . $submit_button_text . '</div>
 		</fieldset>';
 		
 	}

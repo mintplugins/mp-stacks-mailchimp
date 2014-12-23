@@ -25,10 +25,10 @@ jQuery(document).ready(function($){
 			url: mp_stacks_frontend_vars.ajaxurl,
 			success: function (response) {
 				
-				the_form.empty();
-																
+				the_form.html('');
+															
 				//Add our response to the email signup area
-				the_form.prepend(response);
+				the_form.append(response);
 			
 			}
 		}).fail(function (data) {
