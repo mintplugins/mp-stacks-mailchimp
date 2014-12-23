@@ -32,7 +32,7 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 == Changelog ==
 
 = 1.0.0.3 = December 23, 2014
-* CSS Prettify and bug fixes if no api
+* General Improvements and simplification of settings.
 
 = 1.0.0.2 = June 8, 2014
 * CSS Prettify and bug fixes if no api
