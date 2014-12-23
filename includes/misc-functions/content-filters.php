@@ -55,13 +55,13 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 		}
 		
 		//Submit Button Font Size
-		$mailchimp_submit_button_fontsize = get_post_meta($post_id, 'mailchimp_submit_button_fontsize', true);
+		$mailchimp_submit_button_fontsize = mp_core_get_post_meta($post_id, 'mailchimp_submit_button_fontsize', '16');
 		if ( !empty( $mailchimp_submit_button_fontsize ) ) {
 			$css_mailchimp_output .= 'font-size: ' . $mailchimp_submit_button_fontsize  . 'px;';
 		}
 		
 		//Submit Button Border Radius
-		$mailchimp_overall_corner_radius = get_post_meta($post_id, 'mailchimp_overall_corner_radius', true);
+		$mailchimp_overall_corner_radius = mp_core_get_post_meta($post_id, 'mailchimp_overall_corner_radius', '0');
 		if ( $mailchimp_overall_corner_radius == 0  || !empty( $mailchimp_overall_corner_radius ) ) {
 			$css_mailchimp_output .= 'border-radius: 0px ' . $mailchimp_overall_corner_radius . 'px ' . $mailchimp_overall_corner_radius . 'px 0px;';
 		}
@@ -92,14 +92,18 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 	
 	$css_mailchimp_output .= '}';
 	
+	//Email Field-Container Styling
+	$css_mailchimp_output .= '#mp-brick-' . $post_id . ' .mp_stacks_mailchimp_signup .mp-stacks-mailchimp-sign-up-container{ ';
+	
+		$mailchimp_email_input_field_width = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_width', '200');
+		if ( !empty( $mailchimp_email_input_field_width ) ) {
+			$css_mailchimp_output .= 'max-width: ' . $mailchimp_email_input_field_width  . 'px;';
+		}
+	
+	$css_mailchimp_output .= '}';
+		
 	//Email Field Styling
 	$css_mailchimp_output .= '#mp-brick-' . $post_id . ' .mp_stacks_mailchimp_signup .mp-stacks-mailchimp-email{ ';
-		
-		//Email Field Width
-		$mailchimp_email_input_field_width = get_post_meta($post_id, 'mailchimp_email_input_field_width', true);
-		if ( !empty( $mailchimp_email_input_field_width ) ) {
-			$css_mailchimp_output .= 'width: ' . $mailchimp_email_input_field_width  . 'px;';
-		}
 		
 		//Email Field Height
 		if ( !empty( $mailchimp_overall_height ) ) {
@@ -107,14 +111,20 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 		}
 		
 		//Email Field Font Size
-		$mailchimp_email_input_field_fontsize = get_post_meta($post_id, 'mailchimp_email_input_field_fontsize', true);
+		$mailchimp_email_input_field_fontsize = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_fontsize', '14');
 		if ( !empty( $mailchimp_email_input_field_fontsize ) ) {
 			$css_mailchimp_output .= 'font-size: ' . $mailchimp_email_input_field_fontsize  . 'px;';
 		}
 		
+		//Email Field Font Color
+		$mailchimp_email_input_field_fontcolor = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_fontcolor', '14');
+		if ( !empty( $mailchimp_email_input_field_fontcolor ) ) {
+			$css_mailchimp_output .= 'color: ' . $mailchimp_email_input_field_fontcolor  . ';';
+		}
+		
 		//Email Field Border Radius
 		if ( $mailchimp_overall_corner_radius == 0  || !empty( $mailchimp_overall_corner_radius ) ) {
-			$css_mailchimp_output .= 'border-radius: ' . $mailchimp_overall_corner_radius . 'px  0px 0px ' . $mailchimp_overall_corner_radius . 'px';
+			$css_mailchimp_output .= 'border-radius: ' . $mailchimp_overall_corner_radius . 'px';
 		}
 	
 	$css_mailchimp_output .= '}';
@@ -143,19 +153,15 @@ function mp_stacks_brick_content_output_mailchimp($default_content_output, $mp_s
 	//Get the message we should put on the submit button
 	$submit_button_text = get_post_meta( $post_id, 'mailchimp_submit_button_text', true );
 	$submit_button_text = empty( $submit_button_text ) ? __( 'Join', 'mp_stacks_mailchimp' ) : $submit_button_text;
-	
-	//Get the size of the email input gield
-	$mailchimp_email_input_field_size = get_post_meta( $post_id, 'mailchimp_email_input_field_size', true);
-	$mailchimp_email_input_field_size = empty( $mailchimp_email_input_field_size ) ? '35' : $mailchimp_email_input_field_size;
 			
 	$mailchimp_output = '
 	<form id="mp_stacks_mailchimp_signup_' . $post_id. '" class="mp_stacks_mailchimp_signup" method="post">
 		<fieldset>
 			<div class="mp-stacks-mailchimp-sign-up-container">
-				<input value="" class="mp-stacks-mailchimp-email" name="mp_stacks_mailchimp_email" size="' . $mailchimp_email_input_field_size . '" type="text" placeholder="' . __('Email Address', 'mp_stacks_mailchimp' ) . '"/>
+				<input value="" class="mp-stacks-mailchimp-email" name="mp_stacks_mailchimp_email" size="100" type="text" placeholder="' . __('Email Address', 'mp_stacks_mailchimp' ) . '"/>
 				<input value="' . $post_id . '" class="mp-stacks-mailchimp-brick-id" name="mp_stacks_mailchimp_brick_id" type="hidden" />
+				<div class="mp_stacks_mailchimp_submit"><div class="mp_stacks_mailchimp_submit_text">' . $submit_button_text . '</div></div>
 			</div>
-			<div class="mp_stacks_mailchimp_submit button">' . $submit_button_text . '</div>
 		</fieldset>
 	</form>';
 	

@@ -60,14 +60,14 @@ function mp_stacks_mailchimp_create_meta_box(){
 			array(
 					'field_id'			=> 'mailchimp_success_message',
 					'field_title' 	=> __( 'Success Message', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What message should be shown to the user when they successfully join your mailing list. Example: "Thanks For Joining! Check your email to confirm.', 'mp_stacks_mailchimp' ) ,
+					'field_description' 	=> __( 'What message should be shown to the user when they successfully join your mailing list. Default: "Thanks For Joining! Check your email to confirm."', 'mp_stacks_mailchimp' ) ,
 					'field_type' 	=> 'textbox',
 					'field_showhider' => 'mailchimp_messages_showhider'
 			),
 			array(
 					'field_id'			=> 'mailchimp_message_color',
 					'field_title' 	=> __( 'Message Color', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What color should the text be when used (for success/failure messages)', 'mp_stacks_mailchimp' ),
+					'field_description' 	=> __( 'What color should the text be when used (for success/failure messages)', 'mp_stacks_mailchimp' ),
 					'field_type' 	=> 'colorpicker',
 					'field_showhider' => 'mailchimp_messages_showhider'
 			),
@@ -80,43 +80,48 @@ function mp_stacks_mailchimp_create_meta_box(){
 			array(
 					'field_id'			=> 'mailchimp_submit_button_text',
 					'field_title' 	=> __( 'Submit Button Text', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What should the submit button say? Default: "Join"', 'mp_stacks_mailchimp' ),
+					'field_description' 	=> __( 'What should the submit button say? Default: "Join"', 'mp_stacks_mailchimp' ),
 					'field_type' 	=> 'textbox',
 					'field_showhider'			=> 'mailchimp_submit_button_color_showhider',
 			),
 			array(
 					'field_id'			=> 'mailchimp_submit_button_color',
 					'field_title' 	=> __( 'Submit Button Color', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What color should the submit button be?', 'mp_stacks_mailchimp' ),
+					'field_description' 	=> __( 'What color should the submit button be?', 'mp_stacks_mailchimp' ),
 					'field_type' 	=> 'colorpicker',
+					'field_value' => '#5b5b5b',
 					'field_showhider'			=> 'mailchimp_submit_button_color_showhider',
 			),
 			array(
 					'field_id'			=> 'mailchimp_submit_button_text_color',
 					'field_title' 	=> __( 'Submit Button Text Color', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What color should the submit button be?', 'mp_stacks_mailchimp' ),
+					'field_description' 	=> __( 'What color should the submit button be?', 'mp_stacks_mailchimp' ),
 					'field_type' 	=> 'colorpicker',
+					'field_value' => '#fff',
 					'field_showhider'			=> 'mailchimp_submit_button_color_showhider',
 			),
 			array(
 					'field_id'			=> 'mailchimp_mouseover_submit_button_color',
 					'field_title' 	=> __( 'Mouse Over Submit Button Color', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What color should the submit button be when the mouse is over it?', 'mp_stacks_mailchimp' ),
+					'field_description' 	=> __( 'What color should the submit button be when the mouse is over it?', 'mp_stacks_mailchimp' ),
 					'field_type' 	=> 'colorpicker',
+					'field_value' => '#8d8d8d',
 					'field_showhider'			=> 'mailchimp_submit_button_color_showhider',
 			),
 			array(
 					'field_id'			=> 'mailchimp_mouseover_submit_button_text_color',
 					'field_title' 	=> __( 'Mouse Over Submit Button Text Color', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What color should the submit button\'s text be when the mouse is over it?', 'mp_stacks_mailchimp' ),
+					'field_description' 	=> __( 'What color should the submit button\'s text be when the mouse is over it?', 'mp_stacks_mailchimp' ),
 					'field_type' 	=> 'colorpicker',
+					'field_value' => '#fff',
 					'field_showhider'			=> 'mailchimp_submit_button_color_showhider',
 			),
 			array(
 				'field_id'			=> 'mailchimp_submit_button_fontsize',
 				'field_title' 	=> __( 'Submit Button Font Size', 'mp_stacks_mailchimp'),
-				'field_description' 	=> '<br />' . __( 'What size should the font size be for the submit button? (Pixels)', 'mp_stacks_mailchimp' ) ,
+				'field_description' 	=> __( 'What size should the font size be for the submit button? Default: 16', 'mp_stacks_mailchimp' ) ,
 				'field_type' 	=> 'number',
+				'field_value' => '16',
 				'field_showhider'			=> 'mailchimp_submit_button_color_showhider',
 			),
 		array(
@@ -126,37 +131,49 @@ function mp_stacks_mailchimp_create_meta_box(){
 				'field_type' 	=> 'showhider',
 		),
 			array(
-					'field_id'			=> 'mailchimp_email_input_field_width',
-					'field_title' 	=> __( 'Email input field width', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'How wide should the email input field be? (Pixels)', 'mp_stacks_mailchimp' ) ,
+					'field_id'			=> 'mailchimp_email_input_field_fontsize',
+					'field_title' 	=> __( 'Email input field font-size', 'mp_stacks_mailchimp'),
+					'field_description' 	=> __( 'What size should the font be for the email input field in pixels. Default: 14)', 'mp_stacks_mailchimp' ) ,
 					'field_type' 	=> 'number',
+					'field_value' 	=> '14',
 					'field_showhider'			=> 'mailchimp_emailfield_settings_showhider',
 			),
 			array(
-					'field_id'			=> 'mailchimp_email_input_field_fontsize',
-					'field_title' 	=> __( 'Email input field font-size', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What size should the font be for the email input field? (Pixels)', 'mp_stacks_mailchimp' ) ,
-					'field_type' 	=> 'number',
+					'field_id'			=> 'mailchimp_email_input_field_fontcolor',
+					'field_title' 	=> __( 'Email input field font-color', 'mp_stacks_mailchimp'),
+					'field_description' 	=> __( 'What color should the font be for the email input field?)', 'mp_stacks_mailchimp' ) ,
+					'field_type' 	=> 'colorpicker',
+					'field_value' 	=> '#000',
 					'field_showhider'			=> 'mailchimp_emailfield_settings_showhider',
 			),
 		array(
-				'field_id'			=> 'mailchimp_overall_size_settings_showhider',
+				'field_id'	=> 'mailchimp_overall_size_settings_showhider',
 				'field_title' 	=> __( 'Overall Size and Shape - Custom Settings', 'mp_stacks_mailchimp'),
-				'field_description' 	=> '' ,
+				'field_description' => '' ,
 				'field_type' 	=> 'showhider',
 		),
 			array(
 					'field_id'			=> 'mailchimp_overall_height',
 					'field_title' 	=> __( 'Overall height', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'How high should the email input field and submit button be? (Pixels)', 'mp_stacks_mailchimp' ) ,
+					'field_description' 	=> __( 'How high should the email input field and submit button be in pixels? Default: 36px', 'mp_stacks_mailchimp' ) ,
 					'field_type' 	=> 'number',
+					'field_value' 	=> '36',
 					'field_showhider' => 'mailchimp_overall_size_settings_showhider'
+			),
+			array(
+					'field_id'			=> 'mailchimp_email_input_field_width',
+					'field_title' 	=> __( 'Overall width', 'mp_stacks_mailchimp'),
+					'field_description' 	=> __( 'How wide should the email input field and submit button be in pixels? Default: 200', 'mp_stacks_mailchimp' ) ,
+					'field_type' 	=> 'number',
+					'field_value' 	=> '200',
+					'field_showhider' => 'mailchimp_overall_size_settings_showhider',
 			),
 			array(
 					'field_id'			=> 'mailchimp_overall_corner_radius',
 					'field_title' 	=> __( 'Corner Radius', 'mp_stacks_mailchimp'),
-					'field_description' 	=> '<br />' . __( 'What should the radius of the corners be? Tip: "0" is flat, sharp 90 degree corners.', 'mp_stacks_mailchimp' ) ,
+					'field_description' 	=> __( 'What should the radius of the corners be? Tip: "0" is flat, sharp 90 degree corners. Default: 0', 'mp_stacks_mailchimp' ) ,
 					'field_type' 	=> 'number',
+					'field_value' 	=> '0',
 					'field_showhider' => 'mailchimp_overall_size_settings_showhider'
 			),
 		
@@ -183,4 +200,4 @@ function mp_stacks_mailchimp_create_meta_box(){
 	global $mp_stacks_mailchimp_meta_box;
 	$mp_stacks_mailchimp_meta_box = new MP_CORE_Metabox($mp_stacks_mailchimp_add_meta_box, $mp_stacks_mailchimp_items_array);
 }
-add_action('widgets_init', 'mp_stacks_mailchimp_create_meta_box');
+add_action('mp_brick_metabox', 'mp_stacks_mailchimp_create_meta_box');

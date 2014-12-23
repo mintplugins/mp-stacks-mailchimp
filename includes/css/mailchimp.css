@@ -1,5 +1,5 @@
 .mp_stacks_mailchimp_signup{
-	display:inline-block;	
+	display:block;	
 }
 .mp-stacks-mailchimp-error{
 	padding:10px;
@@ -9,15 +9,46 @@
 	margin: 0px auto 20px;;	
 }
 .mp-stacks-mailchimp-sign-up-container{
-	display:table-cell;	
+	display:inline-block;
+	position:relative;
+	float:none;	
+	width:100%;
 }
 .mp_brick .mp_stacks_mailchimp_submit,
 .mp_brick .mp_stacks_mailchimp_submit:hover{
-	display:table-cell;	
+	-webkit-appearance: none;
+	text-indent: 0px;
+	border:none;
+	text-shadow:none;
+	text-decoration:none;
+	font-weight:inherit;
+	text-align: center;
+	white-space:inherit;
+	vertical-align:middle;
+	cursor: pointer;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	
+	-webkit-transition: background-color .25s linear;
+	-moz-transition: background-color .25s linear;
+	-o-transition: background-color .25s linear;
+	-ms-transition: background-color .25s linear;
+	transition: background-color .25s linear;
+	
+	display:table;
+	position:absolute;	
 	border-radius: 0px 3px 3px 0px;	
 	vertical-align: middle;
 	height:36px;
 	font-size:16px;
+	top:0;
+	right:0;
+}
+.mp_stacks_mailchimp_submit_text{
+	display:table-cell;
+	vertical-align:middle;
+	padding:0px 20px 0px 20px;	
 }
 .mp_brick .mp-stacks-mailchimp-email{
 	border-radius: 3px 0px 0px 3px;
@@ -25,4 +56,7 @@
 	margin: 0px;
 	vertical-align: middle;
 	height:36px;
+}
+.mp-stacks-mailchimp-email{
+	width:100%;
 }

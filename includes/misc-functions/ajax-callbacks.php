@@ -35,9 +35,8 @@ function mp_stacks_mailchimp_add_user(){
 	//Mailchimp list info stored in post
 	$mailchimp_api_key = get_post_meta($post_id, 'mailchimp_api_key', true);
 	$mailchimp_list_id = get_post_meta($post_id, 'mailchimp_list_id', true);
-	$mailchimp_success_message = get_post_meta($post_id, 'mailchimp_success_message', true);
-	$mailchimp_success_message = empty( $mailchimp_success_message ) ? __( 'Thanks for joining! Check your email to confirm.', 'mp_stacks_mailchimp' ) : $mailchimp_success_message;
-	$submit_button_text = get_post_meta( $post_id, 'mailchimp_submit_button_text', true );
+	$mailchimp_success_message = mp_core_get_post_meta($post_id, 'mailchimp_success_message', __( 'Thanks for joining! Check your email to confirm.', 'mp_stacks_mailchimp' ) );
+	$submit_button_text = mp_core_get_post_meta( $post_id, 'mailchimp_submit_button_text', __('Join', 'mp_stacks_mailchimp' ) );
 	
 	//Get the size of the email input field
 	$mailchimp_email_input_field_size = get_post_meta( $post_id, 'mailchimp_email_input_field_size', true);
