@@ -4,7 +4,7 @@ Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0.0.4
+Stable tag: 1.0.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 
 == Changelog ==
+
+= 1.0.0.5 = January 21, 2015
+* Set “plugin_licensed” to true for theme bundle utilities.
+* Added email input field background color control
 
 = 1.0.0.4 = December 23, 2014
 * Fixed Ajax responses which broke upon 1.0.0.3
