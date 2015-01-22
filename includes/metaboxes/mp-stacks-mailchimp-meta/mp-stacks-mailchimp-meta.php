@@ -146,6 +146,14 @@ function mp_stacks_mailchimp_create_meta_box(){
 					'field_value' 	=> '#000',
 					'field_showhider'			=> 'mailchimp_emailfield_settings_showhider',
 			),
+			array(
+					'field_id'			=> 'mailchimp_email_input_field_backgroundcolor',
+					'field_title' 	=> __( 'Email input field background-color', 'mp_stacks_mailchimp'),
+					'field_description' 	=> __( 'What color should the background be for the email input field?)', 'mp_stacks_mailchimp' ) ,
+					'field_type' 	=> 'colorpicker',
+					'field_value' 	=> '#FFF',
+					'field_showhider'			=> 'mailchimp_emailfield_settings_showhider',
+			),
 		array(
 				'field_id'	=> 'mailchimp_overall_size_settings_showhider',
 				'field_title' 	=> __( 'Overall Size and Shape - Custom Settings', 'mp_stacks_mailchimp'),
@@ -163,9 +171,9 @@ function mp_stacks_mailchimp_create_meta_box(){
 			array(
 					'field_id'			=> 'mailchimp_email_input_field_width',
 					'field_title' 	=> __( 'Overall width', 'mp_stacks_mailchimp'),
-					'field_description' 	=> __( 'How wide should the email input field and submit button be in pixels? Default: 200', 'mp_stacks_mailchimp' ) ,
+					'field_description' 	=> __( 'How wide should the email input field and submit button be in pixels? Default: 300', 'mp_stacks_mailchimp' ) ,
 					'field_type' 	=> 'number',
-					'field_value' 	=> '200',
+					'field_value' 	=> '300',
 					'field_showhider' => 'mailchimp_overall_size_settings_showhider',
 			),
 			array(

@@ -122,6 +122,12 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 			$css_mailchimp_output .= 'color: ' . $mailchimp_email_input_field_fontcolor  . ';';
 		}
 		
+		//Email Field Background Color
+		$mailchimp_email_input_field_backgroundcolor = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_backgroundcolor', '#FFF');
+		if ( !empty( $mailchimp_email_input_field_backgroundcolor ) ) {
+			$css_mailchimp_output .= 'background-color: ' . $mailchimp_email_input_field_backgroundcolor  . ';';
+		}
+		
 		//Email Field Border Radius
 		if ( $mailchimp_overall_corner_radius == 0  || !empty( $mailchimp_overall_corner_radius ) ) {
 			$css_mailchimp_output .= 'border-radius: ' . $mailchimp_overall_corner_radius . 'px';
