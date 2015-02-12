@@ -43,8 +43,18 @@ function mp_stacks_mailchimp_add_user(){
 	$mailchimp_email_input_field_size = empty( $mailchimp_email_input_field_size ) ? '35' : $mailchimp_email_input_field_size;
 			
 	//Mail chimp
-	$mailchimp_sever_number = substr($mailchimp_api_key, -3); 
-	$mailchimp_url = sprintf('http://'.$mailchimp_sever_number.'.api.mailchimp.com/1.3/?method=listSubscribe&apikey=%s&id=%s&email_address=%s&merge_vars[OPTINIP]=%s&double_optin=true&merge_vars[MMERGE1]=webdev_tutorials&output=json', $mailchimp_api_key, $mailchimp_list_id, $mailchimp_email, $_SERVER['REMOTE_ADDR']);
+	$mailchimp_sever_number = explode( '-', $mailchimp_api_key );
+	$mailchimp_sever_number = $mailchimp_sever_number[1];
+	
+	$json_for_mailchimp_request = json_encode( array( 
+		"apikey" => $mailchimp_api_key,
+		"id" => $mailchimp_list_id,
+		"email" => array(
+			"email" => $mailchimp_email
+		),
+	) );
+	
+	$mailchimp_url = 'https://'.$mailchimp_sever_number.'.api.mailchimp.com/2.0/lists/subscribe/';
 	
 	$response = wp_remote_post( $mailchimp_url, array(
 		'method' => 'POST',
@@ -52,22 +62,25 @@ function mp_stacks_mailchimp_add_user(){
 		'redirection' => 5,
 		'httpversion' => '1.0',
 		'blocking' => true,
-		'headers' => array(),
-		'body' => array( 'username' => 'bob', 'password' => '1234xyz' ),
+		'headers' => array(
+  			'Content-Type' => 'application/json',
+  		),
+		'body' => $json_for_mailchimp_request,
 		'cookies' => array()
 		)
 	);
 	
 	if ( is_wp_error( $response ) ){
 		
-		echo __('OOPS! API and List Keys for this mailinglist have not yet been configured. Please notify the website owner.', 'mp_stacks_mailchimp');
+		echo __('OOPS! API and List Keys for this mailinglist may not yet been configured.', 'mp_stacks_mailchimp');
+		print_r($response);
 		die();
 			
 	}
 	
 	$response = json_decode($response['body']);
-	
-	if ( isset( $response->error ) ){
+				
+	if ( isset( $response->status ) ){
 		
 		echo '<div class="mp-stacks-mailchimp-error">' . $response->error . '</div>
 	

@@ -4,7 +4,7 @@ Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0.0.5
+Stable tag: 1.0.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 
 == Changelog ==
+
+= 1.0.0.6 = February 11, 2015
+* Update to MailChimp API Version 2.0 using JSON POST to lists/subscribe (was using 1.3).
 
 = 1.0.0.5 = January 21, 2015
 * Set “plugin_licensed” to true for theme bundle utilities.
