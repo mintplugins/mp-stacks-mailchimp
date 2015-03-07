@@ -4,7 +4,7 @@ Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0.0.6
+Stable tag: 1.0.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 
 == Changelog ==
+
+= 1.0.0.7 = March 7, 2015
+* Higher CSS Specificity for the input field.
+* Fixed Default for Input Field Text Color. 
 
 = 1.0.0.6 = February 11, 2015
 * Update to MailChimp API Version 2.0 using JSON POST to lists/subscribe (was using 1.3).

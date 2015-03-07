@@ -50,13 +50,11 @@
 	vertical-align:middle;
 	padding:0px 20px 0px 20px;	
 }
-.mp_brick .mp-stacks-mailchimp-email{
+.mp-stack .mp_brick .mp-stacks-mailchimp-sign-up-container input.mp-stacks-mailchimp-email{
 	border-radius: 3px 0px 0px 3px;
 	border: none;
 	margin: 0px;
 	vertical-align: middle;
 	height:36px;
-}
-.mp-stacks-mailchimp-email{
 	width:100%;
 }

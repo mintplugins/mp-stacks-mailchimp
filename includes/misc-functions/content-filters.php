@@ -43,13 +43,13 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 	$css_mailchimp_output .= '#mp-brick-' . $post_id . ' .mp_stacks_mailchimp_signup .mp_stacks_mailchimp_submit{ ';
 		
 		//Submit Button Color
-		$mailchimp_submit_button_color = get_post_meta($post_id, 'mailchimp_submit_button_color', true);
+		$mailchimp_submit_button_color = mp_core_get_post_meta($post_id, 'mailchimp_submit_button_color', '#5b5b5b');
 		if ( !empty( $mailchimp_submit_button_color ) ) {
 			$css_mailchimp_output .= 'background-color: ' . $mailchimp_submit_button_color  . ';';
 		}
 		
 		//Submit Button Text Color
-		$mailchimp_submit_button_text_color = get_post_meta($post_id, 'mailchimp_submit_button_text_color', true);
+		$mailchimp_submit_button_text_color = mp_core_get_post_meta($post_id, 'mailchimp_submit_button_text_color', '#fff');
 		if ( !empty( $mailchimp_submit_button_text_color ) ) {
 			$css_mailchimp_output .= 'color: ' . $mailchimp_submit_button_text_color  . ';';
 		}
@@ -79,13 +79,13 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 	$css_mailchimp_output .= '#mp-brick-' . $post_id . ' .mp_stacks_mailchimp_signup .mp_stacks_mailchimp_submit:hover{ ';
 		
 		//Button Color Hover
-		$mailchimp_mouseover_submit_button_color = get_post_meta($post_id, 'mailchimp_mouseover_submit_button_color', true);
+		$mailchimp_mouseover_submit_button_color = mp_core_get_post_meta($post_id, 'mailchimp_mouseover_submit_button_color', '#5b5b5b');
 		if ( !empty( $mailchimp_mouseover_submit_button_color ) ) {
 			$css_mailchimp_output .= 'background-color: ' . $mailchimp_mouseover_submit_button_color  . ';';
 		}
 		
 		//Button Text Color Hover
-		$mailchimp_mouseover_submit_button_text_color = get_post_meta($post_id, 'mailchimp_mouseover_submit_button_text_color', true);
+		$mailchimp_mouseover_submit_button_text_color = mp_core_get_post_meta($post_id, 'mailchimp_mouseover_submit_button_text_color', '#8d8d8d');
 		if ( !empty( $mailchimp_mouseover_submit_button_text_color ) ) {
 			$css_mailchimp_output .= 'color: ' . $mailchimp_mouseover_submit_button_text_color  . ';';
 		}
@@ -117,7 +117,7 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 		}
 		
 		//Email Field Font Color
-		$mailchimp_email_input_field_fontcolor = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_fontcolor', '14');
+		$mailchimp_email_input_field_fontcolor = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_fontcolor', '#000');
 		if ( !empty( $mailchimp_email_input_field_fontcolor ) ) {
 			$css_mailchimp_output .= 'color: ' . $mailchimp_email_input_field_fontcolor  . ';';
 		}
