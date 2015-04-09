@@ -95,7 +95,7 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 	//Email Field-Container Styling
 	$css_mailchimp_output .= '#mp-brick-' . $post_id . ' .mp_stacks_mailchimp_signup .mp-stacks-mailchimp-sign-up-container{ ';
 	
-		$mailchimp_email_input_field_width = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_width', '200');
+		$mailchimp_email_input_field_width = mp_core_get_post_meta($post_id, 'mailchimp_email_input_field_width', '300');
 		if ( !empty( $mailchimp_email_input_field_width ) ) {
 			$css_mailchimp_output .= 'max-width: ' . $mailchimp_email_input_field_width  . 'px;';
 		}
