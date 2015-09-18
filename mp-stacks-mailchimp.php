@@ -3,7 +3,7 @@
 Plugin Name: MP Stacks + MailChimp
 Plugin URI: http://mintplugins.com
 Description: An MP Stacks Add-On which displays an ajaxified email-list sign-up form integrated with Mail Chimp
-Version: 1.0.0.8
+Version: 1.0.0.9
 Author: Mint Plugins
 Author URI: http://mintplugins.com
 Text Domain: mp_stacks_mailchimp
@@ -11,7 +11,7 @@ Domain Path: languages
 License: GPL2
 */
 
-/*  Copyright 2014  Phil Johnston  (email : phil@mintplugins.com)
+/*  Copyright 2015  Phil Johnston  (email : phil@mintplugins.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -34,7 +34,7 @@ License: GPL2
 */
 // Plugin version
 if( !defined( 'MP_STACKS_MAILCHIMP_VERSION' ) )
-	define( 'MP_STACKS_MAILCHIMP_VERSION', '1.0.0.8' );
+	define( 'MP_STACKS_MAILCHIMP_VERSION', '1.0.0.9' );
 
 // Plugin Folder URL
 if( !defined( 'MP_STACKS_MAILCHIMP_PLUGIN_URL' ) )

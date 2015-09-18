@@ -3,8 +3,8 @@ Contributors: johnstonphilip
 Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
-Tested up to: 4.1
-Stable tag: 1.0.0.8
+Tested up to: 4.3
+Stable tag: 1.0.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,15 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 
 == Changelog ==
+
+= 1.0.0.9 = September 17, 2015
+* Brick Metabox controls now load using ajax.
+* Admin Meta Scripts now enqueued only when needed.
+* Front End Scripts now enqueued only when needed.
+* Removed old enqueue scripts file
+* Include new admin enqueue file
+* Admin Meta Scripts now enqueued only when needed.
+* Fixed double semi-colon typo in mailchimp.css
 
 = 1.0.0.8 = April 9, 2015
 * Proper default for overall width is now 300px. 
