@@ -31,7 +31,8 @@ function mp_stacks_mailchimp_create_meta_box(){
 		'metabox_title' => __( '"MailChimp Sign-Up" Content-Type', 'mp_stacks_mailchimp'), 
 		'metabox_posttype' => 'mp_brick', 
 		'metabox_context' => 'advanced', 
-		'metabox_priority' => 'low' 
+		'metabox_priority' => 'low',
+		'metabox_content_via_ajax' => true,
 	);
 	
 	/**
@@ -208,4 +209,5 @@ function mp_stacks_mailchimp_create_meta_box(){
 	global $mp_stacks_mailchimp_meta_box;
 	$mp_stacks_mailchimp_meta_box = new MP_CORE_Metabox($mp_stacks_mailchimp_add_meta_box, $mp_stacks_mailchimp_items_array);
 }
-add_action('mp_brick_metabox', 'mp_stacks_mailchimp_create_meta_box');
+add_action('mp_brick_ajax_metabox', 'mp_stacks_mailchimp_create_meta_box');
+add_action('wp_ajax_mp_stacks_mailchimp_metabox_content', 'mp_stacks_mailchimp_create_meta_box');
