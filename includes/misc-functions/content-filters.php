@@ -7,7 +7,7 @@
  * @package    MP Stacks MailChimp
  * @subpackage Functions
  *
- * @copyright  Copyright (c) 2014, Mint Plugins
+ * @copyright  Copyright (c) 2015, Mint Plugins
  * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @author     Philip Johnston
  */
@@ -24,6 +24,9 @@ function mp_stacks_brick_content_output_css_mailchimp( $css_output, $post_id, $f
 	if ( $first_content_type != 'mailchimp' && $second_content_type != 'mailchimp' ){
 		return $css_output;	
 	}
+	
+	//Enqueue mailchimp CSS
+	wp_enqueue_style( 'mp_stacks_mailchimp_css', plugins_url( 'css/mailchimp.css', dirname( __FILE__ ) ), array(), MP_STACKS_MAILCHIMP_VERSION );
 	
 	$css_mailchimp_output = NULL;
 	
@@ -155,6 +158,9 @@ function mp_stacks_brick_content_output_mailchimp($default_content_output, $mp_s
 		//Return Default
 		return $default_content_output;
 	}
+	
+	//Enqueue mailchimp ajax js
+	wp_enqueue_script( 'mp_stacks_mailchimp_js', plugins_url( 'js/mailchimp.js', dirname( __FILE__ ) ), array( 'jquery', 'mp_stacks_front_end_js' ), MP_STACKS_MAILCHIMP_VERSION );
 		
 	//Get the message we should put on the submit button
 	$submit_button_text = get_post_meta( $post_id, 'mailchimp_submit_button_text', true );
