@@ -136,7 +136,7 @@ function mp_stacks_mailchimp_include_files(){
 		/**
 		 * enqueue scripts
 		 */
-		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
+		//require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/misc-functions/admin-enqueue-scripts.php' );
 		
 		/**
 		 * Media Filters for mailchimp
