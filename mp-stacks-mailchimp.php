@@ -3,7 +3,7 @@
 Plugin Name: MP Stacks + MailChimp
 Plugin URI: http://mintplugins.com
 Description: An MP Stacks Add-On which displays an ajaxified email-list sign-up form integrated with Mail Chimp
-Version: 1.0.0.9
+Version: 1.0.1.0
 Author: Mint Plugins
 Author URI: http://mintplugins.com
 Text Domain: mp_stacks_mailchimp
@@ -14,7 +14,7 @@ License: GPL2
 /*  Copyright 2015  Phil Johnston  (email : phil@mintplugins.com)
 
     This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
+    it under the terms of the GNU General Public License, version 2, as
     published by the Free Software Mint Plugins Core.
 
     This program is distributed in the hope that it will be useful,
@@ -34,7 +34,7 @@ License: GPL2
 */
 // Plugin version
 if( !defined( 'MP_STACKS_MAILCHIMP_VERSION' ) )
-	define( 'MP_STACKS_MAILCHIMP_VERSION', '1.0.0.9' );
+	define( 'MP_STACKS_MAILCHIMP_VERSION', '1.0.1.0' );
 
 // Plugin Folder URL
 if( !defined( 'MP_STACKS_MAILCHIMP_PLUGIN_URL' ) )
@@ -101,53 +101,53 @@ function mp_stacks_mailchimp_include_files(){
 	 * If mp_core or mp_stacks aren't active, stop and install it now
 	 */
 	if (!function_exists('mp_core_textdomain') || !function_exists('mp_stacks_textdomain')){
-		
+
 		/**
 		 * Include Plugin Checker
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-checker.php' );
-		
+
 		/**
 		 * Include Plugin Installer
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
-		
+
 		/**
 		 * Check if mp_core in installed
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/plugin-checker/included-plugins/mp-core-check.php' );
-		
+
 		/**
 		 * Check if mp_stacks is installed
 		 */
 		include_once( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/plugin-checker/included-plugins/mp-stacks.php' );
-		
+
 	}
 	/**
 	 * Otherwise, if mp_core and mp_stacks are active, carry out the plugin's functions
 	 */
 	else{
-		
+
 		/**
 		 * Update script - keeps this plugin up to date
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/updater/mp-stacks-mailchimp-update.php' );
-		
+
 		/**
 		 * enqueue scripts
 		 */
 		//require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/misc-functions/admin-enqueue-scripts.php' );
-		
+
 		/**
 		 * Media Filters for mailchimp
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/misc-functions/content-filters.php' );
-		
+
 		/**
 		 * Metabox for mailchimp
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/metaboxes/mp-stacks-mailchimp-meta/mp-stacks-mailchimp-meta.php' );
-		
+
 		/**
 		 * Add this add on to the list of Active MP Stacks Add Ons
 		 */
@@ -158,22 +158,22 @@ function mp_stacks_mailchimp_include_files(){
 			}
 			add_filter( 'mp_stacks_active_add_ons', 'mp_stacks_mailchimp_add_active' );
 		}
-		
+
 		/**
 		 * Metabox which adds mailchimp as a content type
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/metaboxes/mp-stacks-content/mp-stacks-content.php' );
-		
+
 		/**
-		 * Misc Functions 
+		 * Misc Functions
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/misc-functions/misc-functions.php' );
-		
+
 		/**
 		 * Ajax Callback Functions
 		 */
 		require( MP_STACKS_MAILCHIMP_PLUGIN_DIR . 'includes/misc-functions/ajax-callbacks.php' );
-				
+
 	}
 }
 add_action('plugins_loaded', 'mp_stacks_mailchimp_include_files', 9);

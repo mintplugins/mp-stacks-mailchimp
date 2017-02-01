@@ -3,8 +3,8 @@ Contributors: johnstonphilip
 Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 1.0.0.9
+Tested up to: 4.7
+Stable tag: 1.0.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 == Changelog ==
 
+= 1.0.1.0 = February 1, 2017
+* Update to use MailChimp API V3
+
 = 1.0.0.9 = September 17, 2015
 * Brick Metabox controls now load using ajax.
 * Admin Meta Scripts now enqueued only when needed.
@@ -41,11 +44,11 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 * Fixed double semi-colon typo in mailchimp.css
 
 = 1.0.0.8 = April 9, 2015
-* Proper default for overall width is now 300px. 
+* Proper default for overall width is now 300px.
 
 = 1.0.0.7 = March 7, 2015
 * Higher CSS Specificity for the input field.
-* Fixed Default for Input Field Text Color. 
+* Fixed Default for Input Field Text Color.
 
 = 1.0.0.6 = February 11, 2015
 * Update to MailChimp API Version 2.0 using JSON POST to lists/subscribe (was using 1.3).
