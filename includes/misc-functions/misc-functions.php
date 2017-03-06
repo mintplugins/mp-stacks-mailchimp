@@ -74,7 +74,7 @@
 	$ch = curl_init($url);
 
 	curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $api_key);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, ['content-type: application/json']);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, 'content-type: application/json');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
